@@ -4,8 +4,8 @@ import {useEffect, useState} from "react";
 
 function App() {
     const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [, setLoading] = useState(true);
+    const [, setError] = useState(null);
 
     useEffect(() => {
         axios
@@ -24,12 +24,10 @@ function App() {
     }, []);
 
     const newQuote = () => {
-        setLoading(true);
         axios
             .get("https://friends-quotes-api.herokuapp.com/quotes/random")
             .then((response) => {
                 setData(response.data);
-                console.log(response.data);
                 setError(null);
             })
             .catch((error) => {
@@ -41,32 +39,24 @@ function App() {
             });
     };
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-
-    if (error) {
-        return <div>{error}</div>;
-    }
-
     return (
         <div className="App">
             <div id="quote-box">
                 <div className="quote-text">
                     <i className="fa fa-quote-left"></i>
-                    <span id="text"> {data.quote}</span>
+                    <span id="text"> {data?.quote}</span>
                 </div>
                 <div className="quote-author">
-                    <span id="author">- {data.character}</span>
+                    <span id="author">- {data?.character}</span>
                 </div>
                 <div className="buttons">
                     <div className="socials">
                         <a
                             id="tweet-quote"
-                            href={`https://twitter.com/intent/tweet?text=${data.quote.replace(
+                            href={`https://twitter.com/intent/tweet?text=${data?.quote.replace(
                                 /\s/g,
                                 "%20"
-                            )}%0A-%20${data.character}`}
+                            )}%0A-%20${data?.character}`}
                             target="_blank"
                             className="social-button"
                             rel="noopener noreferrer">
