@@ -1,38 +1,52 @@
 .App {
-  text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Fredoka", sans-serif;
+    background-color: rgb(22, 160, 133);
+    color: rgb(22, 160, 133);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#quote-box {
+    width: 450px;
+    padding: 40px 50px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#quote-box .quote-text {
+    align-self: flex-start;
+    font-size: 2em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#quote-box .quote-author {
+    align-self: flex-end;
+    margin: 20px 0 0;
+    font-size: 1.2em;
 }
 
-.App-link {
-  color: #61dafb;
+#quote-box .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#quote-box .social-button {
+    color: white;
+    background-color: rgb(22, 160, 133);
+    border-radius: 5px;
+    margin-right: 5px;
+    padding: 5px;
+}
+
+#quote-box #new-quote {
+    font-family: "Fredoka", sans-serif;
+    background-color: rgb(22, 160, 133);
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
 }
