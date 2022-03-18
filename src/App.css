@@ -6,6 +6,7 @@
     font-family: "Fredoka", sans-serif;
     background-color: rgb(22, 160, 133);
     color: rgb(22, 160, 133);
+    transition: all 0.5s ease;
 }
 
 #quote-box {
@@ -32,6 +33,7 @@
     display: flex;
     justify-content: space-between;
     margin: 30px 0 0;
+    transition: all 0.5s ease;
 }
 
 #quote-box .social-button {
@@ -40,6 +42,7 @@
     border-radius: 5px;
     margin-right: 5px;
     padding: 5px;
+    transition: all 0.5s ease;
 }
 
 #quote-box #new-quote {
@@ -49,4 +52,5 @@
     padding: 8px;
     border-radius: 5px;
     border: none;
+    transition: all 0.5s ease;
 }
