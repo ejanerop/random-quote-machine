@@ -29,6 +29,7 @@ function App() {
             .get("https://friends-quotes-api.herokuapp.com/quotes/random")
             .then((response) => {
                 setData(response.data);
+                console.log(response.data);
                 setError(null);
             })
             .catch((error) => {
@@ -39,6 +40,14 @@ function App() {
                 setLoading(false);
             });
     };
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>{error}</div>;
+    }
 
     return (
         <div className="App">
